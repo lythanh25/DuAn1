@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+/* TÁC ĐỘNG CHUNG */
+/* bỏ gạch chân thẻ a */
+a {
+  text-decoration: none;
+}
+
+.main-content {
+  width: 1170px;
+  max-width: calc(100% - 24px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block; /*thêm để có thể sd padding*/
+  padding: 0 16px;
+  min-width: 118px;
+  line-height: 50px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 24.5px;
+  background: #171100;
+}
+
+/* TÁC ĐỘNG RIÊNG THẺ HEADER */
+.header {
+  background: #fffcf4;
+}
+
+/* tạo hiệu ứng đứng im cho thanh menu */
+.header.fixed {
+  position: sticky;
+  top: -28px; /* đứng im khi còn 36 - 28 = 8px*/
+}
+
+/* tác động class body là class con của header */
+.header .body-header {
+  display: flex;
+  align-items: center; /*căn giữa*/
+  padding: 36px 0 8px;
+}
+
+.nav ul {
+  display: flex;
+}
+/* dùng để  kéo hết phần sau về 1 phía */
+.nav {
+  margin-left: auto;
+}
+
+.nav a {
+  color: #5f5b53;
+  font-size: 1.6rem;
+  padding: 8px 21px; /* sử dụng padding thay vì margin để vùng bấm đc mở rộng hơn*/
+  position: relative;
+  /* margin-left: 42px; */
+  /* text-align: center; thẻ inline ko cần
+  font-family: Poppins; có sẵn ở trên body
+  font-style: normal; trình duyệt mặc định có rồi
+  font-weight: 400;
+  line-height: 28px; 175% */
+}
+
+.nav li.active a,
+.nav a:hover {
+  color: #171100;
+  /* font-weight: 600; */
+  text-shadow: 1px 0 0 currentColor;
+}
+
+/* tạo thanh di chuyển dưới nút home */
+/* class active là dùng */
+.nav li.active a::after {
+  position: absolute;
+  display: block;
+  left: 21px;
+  bottom: 6px;
+  content: "";
+  width: 12px;
+  height: 2px;
+
+  border-radius: 1px;
+  background: #171100;
+}
+
+/* thiết kế riêng nút btn-sign-up */
+.header .btn-sign-up {
+  min-width: 144px;
+}
+
+/* nút btn cách thẻ nav 70px */
+.header .action {
+  margin-left: 49px;
+}
