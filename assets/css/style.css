@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+/* tạo tên biến Sen */
+:root {
+  --font-heading: "Sen", sans-serif;
+  --primary-color: #ffb900;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -10,7 +16,8 @@ body {
   font-size: 1.6rem;
   font-family: "Poppins", sans-serif;
 }
-/* TÁC ĐỘNG CHUNG */
+
+/* =======TÁC ĐỘNG CHUNG============= */
 /* bỏ gạch chân thẻ a */
 a {
   text-decoration: none;
@@ -32,17 +39,23 @@ a {
   text-align: center;
   font-size: 1.6rem;
   font-weight: 600;
-  border-radius: 24.5px;
+  border-radius: 999px;
   background: #171100;
 }
 
-/* TÁC ĐỘNG RIÊNG THẺ HEADER */
+/* tạo hiệu ứng mờ cho btn */
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* ================TÁC ĐỘNG RIÊNG THẺ HEADER======================= */
 .header {
   background: #fffcf4;
 }
 
 /* tạo hiệu ứng đứng im cho thanh menu */
 .header.fixed {
+  z-index: 1; /*cố định ko cho ảnh dưới chèn qua */
   position: sticky;
   top: -28px; /* đứng im khi còn 36 - 28 = 8px*/
 }
@@ -105,4 +118,174 @@ a {
 /* nút btn cách thẻ nav 70px */
 .header .action {
   margin-left: 49px;
+}
+
+/*======================CODE CHO PHẦN HERO================= */
+.hero {
+  padding: 56px 0 65px; /*nên dùng padding thay margin để đổi đc nền ở trên*/
+  background: #fffcf4;
+}
+
+.hero .body {
+  display: flex;
+}
+
+/* set chiều rộng của 2 khối */
+.hero .media-block {
+  position: relative;
+  width: 48%;
+}
+
+/* set để ko bị vỡ ảnh nếu có ảnh khác lớn hơn */
+.hero .media-block .img {
+  width: 470px;
+  height: 685px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* ô nhỏ cạnh ảnh */
+.hero .hero-summary {
+  width: 270px;
+  padding: 24px;
+  position: absolute;
+  bottom: 48px;
+  right: 0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+.hero-summary .item {
+  display: flex;
+  align-items: center;
+}
+/* tác động vào thẻ icon nằm sau thẻ icon */
+.hero-summary .item + .item {
+  margin-top: 22px;
+}
+/* chỉnh icon */
+.hero-summary .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff9e8;
+  /* margin-bottom: 22px; */
+}
+
+.hero-summary .icon2 {
+  background-color: #fcefff;
+}
+
+.hero-summary .icon3 {
+  background-color: #ebeaff;
+  /* margin: 0; */
+}
+
+.hero-summary .infor {
+  margin-left: 16px;
+}
+
+.hero-summary .lable {
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 1.86; /* 185.714% */
+}
+
+.hero-summary .title {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67; /* 166.667% */
+}
+
+/* Code phần content block */
+/* =======hero right============= */
+.hero .content-block {
+  width: 52%;
+  padding-left: 130px;
+  padding-top: 64px;
+}
+
+.content-block .heading {
+  width: 470px;
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 5.8rem;
+  font-weight: 700;
+  line-height: 1.17; /* 117.241% */
+  letter-spacing: -1.16px;
+}
+
+.content-block .nd1 {
+  margin-top: 22px;
+  color: #5f5b53;
+  font-size: 1.8rem;
+  line-height: 1.68; /* 166.667% */
+}
+
+.content-block .call-to-action {
+  margin-top: 38px;
+  align-items: center;
+  display: flex;
+}
+
+.hero-cta {
+  min-width: 180px;
+  line-height: 64px;
+  background: var(--primary-color);
+}
+
+/* xử lý btn watch */
+.content-block .watch-video {
+  border: none;
+  background: transparent; /* trong suốt*/
+  display: flex;
+  margin-left: 28px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.content-block .watch-video .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.07);
+}
+
+.content-block .watch-video span {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67; /* 166.667% */
+  margin-left: 14px;
+}
+
+.content-block .nd1-Recent {
+  margin-top: 48px;
+}
+
+.content-block .nd1-strong {
+  margin-top: 8px;
+}
+
+.content-block .nd1-strong strong {
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 4.4rem;
+  font-weight: 700;
+  line-height: 1.23; /* 122.727% */
+  margin-right: 15px;
+}
+
+/* có thẻ thay .student = nth-child(2) */
+.content-block .nd1-strong .students {
+  margin-left: 28px;
 }
